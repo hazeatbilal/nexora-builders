@@ -2822,3 +2822,135 @@ select {
     }
 
 }
+/* =========================================================
+   HOME PAGE IMAGES
+========================================================= */
+
+/* ABOUT IMAGE */
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.intro-image {
+    position: relative;
+    overflow: hidden;
+    height: 480px;
+    background: var(--charcoal);
+}
+
+.intro-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(17, 19, 21, 0.05),
+        rgba(17, 19, 21, 0.35)
+    );
+    pointer-events: none;
+}
+
+.intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.intro-image:hover img {
+    transform: scale(1.05);
+}
+
+.intro-text {
+    max-width: 700px;
+}
+
+
+/* SERVICE IMAGES */
+
+.service-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 175px;
+    overflow: hidden;
+    background: var(--charcoal-3);
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.72;
+    transition: transform 0.7s ease, opacity 0.4s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.06);
+    opacity: 0.9;
+}
+
+.service-card .service-number {
+    position: relative;
+    z-index: 2;
+}
+
+.service-card h3 {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* SERVICE IMAGE DARK OVERLAY */
+
+.service-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(17, 19, 21, 0.15),
+        rgba(17, 19, 21, 0.95)
+    );
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .intro-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .intro-image {
+        height: 320px;
+    }
+
+    .intro-text {
+        max-width: 100%;
+    }
+
+    .service-image {
+        height: 145px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .intro-image {
+        height: 270px;
+    }
+
+    .service-image {
+        height: 135px;
+    }
+
+}
